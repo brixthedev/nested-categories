@@ -2,16 +2,13 @@
 
 ## Introduction
 
-This problem is intended to test your skills at parsing nested JSON objects with no predefined depth and rendering components that follow this JSON structure. This
-problem is inspired by categories and sub-categories in online shops.
+This problem is intended to test your skills at parsing nested JSON objects with no predefined depth and rendering components that follow this JSON structure. This problem is inspired by categories and sub-categories in online shops.
 
 ## Problem Description
 
-A category is a JSON object that has two properties: name and categories . The name property is a string, while the categories property is a list of category
-objects that represent the child categories the given category. You will be presented with a category JSON object with a name property equal to "root".
-The names of the child categories under the root category will be named X , where X is equal to the index of that child (one-based) in the categories list. All the
-other categories are named following the pattern PARENT.X , where PARENT is the name of the parent category and X is equal to the index of that child (one-based)
-in the categories list of the parent category. So, for example, the sixth child of the category named 4.5.3 will be named 4.5.3.6 .
+A category is a JSON object that has two properties: name and categories . The name property is a string, while the categories property is a list of category objects that represent the child categories the given category. You will be presented with a category JSON object with a name property equal to "root".
+
+The names of the child categories under the root category will be named X , where X is equal to the index of that child (one-based) in the categories list. All the other categories are named following the pattern PARENT.X , where PARENT is the name of the parent category and X is equal to the index of that child (one-based) in the categories list of the parent category. So, for example, the sixth child of the category named 4.5.3 will be named 4.5.3.6 .
 
 An example of this JSON object is:
 {
@@ -48,41 +45,24 @@ categories: []
 }
 
 You will be presented with a stringified JSON similar to the example above and you will be required to render nested divs that will follow the structure of this JSON.
-Basically, each div you render will need to display the name property of the corresponding category object and have child divs for each of the its child categories
-listed in the categories property. These child divs will also need to display the name property of their corresponding category object and have child divs for each
-of their own child categories listed in the categories property.
+
+Basically, each div you render will need to display the name property of the corresponding category object and have child divs for each of the its child categories listed in the categories property. These child divs will also need to display the name property of their corresponding category object and have child divs for each of their own child categories listed in the categories property.
 
 The JSON showed above should render something similar to this:
-|----------------------------------------|
-| Name: root |
-| |
-| |----------------------------------| |
-| | Name: 1 | |
-| | | |
-| | |----------------------------| | |
-| | | Name: 1.1 | | |
-| | |----------------------------| | |
-| | | |
-| | |----------------------------| | |
-| | | Name: 1.2 | | |
-| | | | | |
-| | | |----------------------| | | |
-| | | | Name: 1.2.1 | | | |
-| | | |----------------------| | | |
-| | | | | |
-| | |----------------------------| | |
-| | | |
-| |----------------------------------| |
-| |
-| |----------------------------------| |
-| | Name: 2 | |
-| | | |
-| | |----------------------------| | |
-| | | Name: 2.1 | | |
-| | |----------------------------| | |
-| | | |
-| |----------------------------------| |
-|----------------------------------------|
+
+. Name: root
+
+.. Name: 1
+
+... Name: 1.1
+
+... Name: 1.2
+
+.... Name: 1.2.1
+
+.. Name: 2
+
+... Name: 2.1
 
 ## Modes
 
